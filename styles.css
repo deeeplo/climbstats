@@ -1,0 +1,36 @@
+/* Default light theme variables */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #4CAF50;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #66bb6a;
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Theme switch styling */
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Add some basic styling */
+h1 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-color);
+} 
