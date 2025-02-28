@@ -16,21 +16,96 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+/* Make all transitions consistent */
+body, 
+.tab-button,
+.tab-nav,
+h1, 
+p,
+.theme-toggle {
   transition: all 0.3s ease;
 }
 
-/* Theme switch styling */
-.theme-switch {
+.theme-toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
 }
 
-/* Add some basic styling */
-h1 {
+.theme-toggle:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.theme-toggle i {
+  font-size: 1.5rem;
   color: var(--text-color);
 }
 
-p {
+/* Make sure all text follows the theme color */
+h1, p {
   color: var(--text-color);
+}
+
+/* Tab Navigation Styles */
+.tab-nav {
+  display: flex;
+  background-color: var(--background-color);
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid var(--text-color);
+  gap: 10px;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  opacity: 0.7;
+}
+
+.tab-button.active {
+  opacity: 1;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.tab-button:hover {
+  opacity: 1;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.tab-button.active:hover {
+  background-color: var(--accent-color);
+}
+
+/* Tab Content Container */
+.tab-content {
+  padding: 20px;
+}
+
+/* Tab panel visibility */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
 } 

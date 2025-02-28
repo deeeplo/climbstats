@@ -2,25 +2,46 @@
 <html data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- Update CSP to allow Font Awesome fonts -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="default-src 'self'; script-src 'self';"
     />
     <meta
       http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="default-src 'self'; script-src 'self';"
     />
-    <title>:D</title>
+    <title>Climbing Tracker</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="theme-switch">
-      <input type="checkbox" id="theme-toggle">
-      <label for="theme-toggle">Dark Mode</label>
+    <nav class="tab-nav">
+      <button class="tab-button active" data-tab="log">Log Climb</button>
+      <button class="tab-button" data-tab="stats">Stats</button>
+      <button class="tab-button" data-tab="settings">Settings</button>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+      ☀️
+    </button>
+
+    <div class="tab-content">
+      <div id="log" class="tab-panel active">
+        <h1>Climbs</h1>
+        <p>Climbing session logging form will go here</p>
+      </div>
+      
+      <div id="stats" class="tab-panel">
+        <h1>Your Stats</h1>
+        <p>Climbing statistics will go here</p>
+      </div>
+      
+      <div id="settings" class="tab-panel">
+        <h1>Settings</h1>
+        <p>App settings will go here</p>
+      </div>
     </div>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
+
     <script src="renderer.js"></script>
   </body>
 </html>
